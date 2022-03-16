@@ -63,33 +63,19 @@ export class LoginComponent implements OnInit {
     const user = { email: correo, password: contra };
     this.userService.login(user).subscribe(data => {
       console.log(data);
-    })
-    //Redirigir
+
+      //La respuesta se almacena en el objstorage
+      this.objstorage.username = data.token;
+
+      //Guardado en el LocalStorage
+      localStorage.setItem('username', this.objstorage.username);
+
+      //Redirigir
       this.router.navigate(['/paginaInicio']);
-    // //Se asignan las variables al objeto usuario
-    // this.objuser_in.username = correo;
-    // this.objuser_in.password = contra;
-
-    // //Se procede a la respectiva consulta
-    // this.usuariosService.logByUser(this.objuser_in).subscribe(
-    //   res => {
-
-    //     console.log(res);
-
-    //     //La respuesta se almacena en el objstorage
-    //     this.objstorage.username = res;
-
-    //     //Guardado en el LocalStorage
-    //     localStorage.setItem('username', this.objstorage.username);
-
-    //     //Redirigir
-    //     this.router.navigate(['/paginaInicio']);
-    //   },
-    //   err => {
-    //     console.error(err);
-    //     alert("Datos erróneos");
-    //   }
-    // )
+    }, err => {
+      console.error(err);
+      alert("Datos erróneos");
+    });
   };
 
   //----------Otras funciones
