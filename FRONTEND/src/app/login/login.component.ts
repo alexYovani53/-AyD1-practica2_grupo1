@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UsersService } from "../services/users/users.service";
 
 @Component({
   selector: 'app-login',
@@ -7,8 +8,6 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-
-
 
   //Objeto para el localstorage
   objstorage: any = {
@@ -18,7 +17,7 @@ export class LoginComponent implements OnInit {
   contra: any;
   valdatos: boolean | undefined;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, public userService: UsersService) { }
 
   ngOnInit(): void {
     //Al inicio se limpia el local storage
@@ -39,7 +38,7 @@ export class LoginComponent implements OnInit {
     if(this.valdatos == true)
     {
       //Se verifica al usuario que esté registrado
-      this.Verifuser(this.correo, this.contra);  
+      this.Verifuser(this.correo, this.contra);
     }
   };
 
@@ -61,7 +60,10 @@ export class LoginComponent implements OnInit {
   //---------Función de verificación de usuario
   Verifuser(correo:string, contra:string)
   {
-
+    const user = { email: correo, password: contra };
+    this.userService.login(user).subscribe(data => {
+      console.log(data);
+    })
     //Redirigir
       this.router.navigate(['/paginaInicio']);
     // //Se asignan las variables al objeto usuario
