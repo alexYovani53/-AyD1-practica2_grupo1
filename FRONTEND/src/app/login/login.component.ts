@@ -61,11 +61,11 @@ export class LoginComponent implements OnInit {
   Verifuser(correo:string, contra:string)
   {
     const user = { email: correo, password: contra };
-    this.userService.login(user).subscribe(data => {
-      console.log(data);
+    this.userService.login(user).subscribe(res => {
+      console.log(res);
 
       //La respuesta se almacena en el objstorage
-      this.objstorage.username = data.token;
+      this.objstorage.username = res.token;
 
       //Guardado en el LocalStorage
       localStorage.setItem('username', this.objstorage.username);
