@@ -1,0 +1,76 @@
+
+<div class="containers">
+	<div class="main-login main-center">
+
+        <form [formGroup]="crearUsuario" (ngSubmit)="test()" class="form-horizontal" >
+            <div class="form-group namegroup">
+                <label for="name" class="cols-sm-2 control-label">Nombre</label>
+                <div class="cols-sm-10">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
+                        <input formControlName="nombre" type="text" class="form-control" name="name" id="name"  placeholder="Nombre"/>
+                    </div>
+                    <span class="Errores">{{ErrorNombre}}</span>
+                </div>
+            </div>
+            <div class="inputs">
+
+    
+                <div class="form-group">
+                    <label for="usuario" class="cols-sm-2 control-label">Usuario</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                            <input formControlName="usuario" type="text" class="form-control" name="usuario" id="usuario"  placeholder="Usuario "/>
+                        </div>
+                        
+                        <span class="Errores">{{ErrorUsuario}}</span>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="contrasena" class="cols-sm-2 control-label">Contraseña</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                            <input formControlName="contrasena" type="password" class="form-control" name="contrasena" id="contrasena"  placeholder="Usuario"/>
+                        </div>
+                        
+                        <span class="Errores">{{ErrorContrasena}}</span>
+                    </div>
+                </div>
+    
+                
+                <div class="form-group">
+                    <label for="Confirmar" class="cols-sm-2 control-label">Confirmar </label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="fa fa-key" aria-hidden="true"></i></span>
+                            <input formControlName="confirmar" type="password" class="form-control" name="Confirmar" id="Confirmar"  placeholder="Contraseña"/>
+                        </div>
+                        <span class="Errores">{{ErrorContrasena}}</span>
+                    </div>
+                </div>
+    
+                <div class="form-group">
+                    <label for="foto" class="cols-sm-2 control-label required">Foto</label>
+                    <div class="cols-sm-10">
+                        <div class="input-group">
+                            <label for="foto"><span class="input-group-addon"><i class="fa fa-camera" aria-hidden="true"></i></span></label>
+                            <input formControlName="foto" type="file" class="form-control inputfile"  name="foto" id="foto" (change)="fileChange($event)" />
+                            <input formControlName="fototext" type="text" class="form-control" name="fototext" id="fototext" [readonly]="true"  placeholder="Foto nombre" value="{{crearUsuario.value.fototext}}"/>
+                        </div>
+                        
+                        <span class="Errores">{{ErrorFoto}}</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group ">
+                <button type="button" type="submit" class="btn btn-primary btn-lg btn-block login-button">Registrar</button>
+            </div>
+
+
+        </form>
+    </div>
+</div>
