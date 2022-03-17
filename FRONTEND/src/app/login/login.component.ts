@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { UsersService } from "../services/users/users.service";
+import {Component, OnInit} from '@angular/core';
+import {Router} from '@angular/router';
+import {UsersService} from "../services/users/users.service";
 
 @Component({
   selector: 'app-login',
@@ -60,12 +60,18 @@ export class LoginComponent implements OnInit {
   //---------Función de verificación de usuario
   Verifuser(correo:string, contra:string)
   {
-    const user = { email: correo, password: contra };
+    const user = { user_name: correo, password: contra };
     this.userService.login(user).subscribe(res => {
       console.log(res);
 
+      if (res.status != 200) {
+        console.error(res.message);
+        alert(`Error: ${res.message}`);
+        return;
+      }
+
       //La respuesta se almacena en el objstorage
-      this.objstorage.username = res.token;
+      this.objstorage.username = res.data.id_usuario.toString() + res.data.usuario;
 
       //Guardado en el LocalStorage
       localStorage.setItem('username', this.objstorage.username);
