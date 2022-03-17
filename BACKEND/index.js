@@ -19,4 +19,6 @@ app.use((req, res, next) => {
 app.use(routesLogin);  
 app.use(routesRegistro);  
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+var server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+module.exports = server;
