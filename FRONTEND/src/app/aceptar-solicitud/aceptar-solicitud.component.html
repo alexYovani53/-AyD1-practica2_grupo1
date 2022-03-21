@@ -1,0 +1,24 @@
+<app-navig></app-navig>
+<br>
+<div class="container">
+<div class="row p-3 mb-2 bg-gradient-dark text-white">
+
+    <div class="container-fluid">
+    <div  *ngFor="let element of lista">
+    
+       
+        <div class="col-sm-6 col-md-4 col-lg-3" style=" padding-bottom: 25px !important">
+
+            <div class="jumbotron">
+            <h1 style="color: black;">{{element.name}}</h1>
+            <img class="img-fluid" src={{element.url}} >
+            <button type="button" class="btn btn-primary" >AGREGAR <i class="fa fa-add"></i>
+            </button>
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+</div>
+</div>
