@@ -2,6 +2,8 @@
 const express = require('express');
 var cors = require('cors');
 const routesLogin = require('./routes/login');
+const routesRegistro = require('./routes/registro');
+const routesPost = require('./routes/post');
 
 const PORT = process.env.PORT || 1337;
 
@@ -12,9 +14,17 @@ app.use(express.json({extended: true}));
 
 app.use((req, res, next) => {
   res.set('Content-Type', 'application/json');
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Authorization, X-API-KEY, Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Request-Method');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, PUT, DELETE');
+  res.header('Allow', 'GET, POST, OPTIONS, PUT, DELETE');
   next();
 });
 
 app.use(routesLogin);  
+app.use(routesRegistro);  
+app.use(routesPost);
 
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+var server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+
+module.exports = server;

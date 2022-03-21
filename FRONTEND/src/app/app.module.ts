@@ -3,12 +3,14 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import {FormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 import { NavigComponent } from './navig/navig.component';
 import { PaginaInicioComponent } from './pagina-inicio/pagina-inicio.component';
 import { LoginComponent } from './login/login.component';
+import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
+import { RegistroComponent } from './registro/registro.component';
 
 
 @NgModule({
@@ -16,12 +18,15 @@ import { LoginComponent } from './login/login.component';
     AppComponent,
     NavigComponent,
     PaginaInicioComponent,
-    LoginComponent
+    LoginComponent,
+    RegistroComponent,
+    CrearPublicacionComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule
   ],
   providers: [
