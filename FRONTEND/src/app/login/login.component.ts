@@ -11,7 +11,8 @@ export class LoginComponent implements OnInit {
 
   //Objeto para el localstorage
   objstorage: any = {
-    username: ''
+    username: '',
+    idusuario: 0
   }
   correo: any;
   contra: any;
@@ -71,10 +72,12 @@ export class LoginComponent implements OnInit {
       }
 
       //La respuesta se almacena en el objstorage
-      this.objstorage.username = res.data.id_usuario.toString() + res.data.usuario;
+      this.objstorage.username = res.data.usuario;
+      this.objstorage.id_usuario = res.data.id_usuario;
 
       //Guardado en el LocalStorage
       localStorage.setItem('username', this.objstorage.username);
+      localStorage.setItem('idusuario', this.objstorage.id_usuario);
 
       //Redirigir
       this.router.navigate(['/paginaInicio']);

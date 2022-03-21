@@ -52,14 +52,17 @@ export class CrearPublicacionComponent implements OnInit {
 
     console.log("axios start");
 
-  //  let idUser = localStorage.getItem('username'); 
-    axios.post("http://localhost:1337/addPost/lesmg",{
+    let idUser = localStorage.getItem('idusuario'); 
+
+    axios.post("http://localhost:1337/addPost/" + idUser ,{
       publication:this.crearPublicacion.value.publication,
-      image:this.image
+      image: this.image,
+
+
     }).then(result=>{
       console.log(result.data.status);
         if(result.data.status == 200){
-          this.router.navigate(['/paginaInicio']);
+          alert('Se guardo post exitosamente')
         }
       }
     ).catch(err=>{

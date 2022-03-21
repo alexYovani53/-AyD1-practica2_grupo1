@@ -19,7 +19,7 @@ import { RegistroComponent } from './registro/registro.component';
     NavigComponent,
     PaginaInicioComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
     CrearPublicacionComponent
   ],
   imports: [
