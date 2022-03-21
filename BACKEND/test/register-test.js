@@ -9,7 +9,7 @@ chai.use(chaiHttp);
 
 describe('/GET/:user User', () => {
     it('It should GET user', done => {
-        let id = "Daniel134";
+        let id = "Daniel1234";
         chai.request(server)
         .get(`/registro/${id}`)
         .end((err, res) => {
