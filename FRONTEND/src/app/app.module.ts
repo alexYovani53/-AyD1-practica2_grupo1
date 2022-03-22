@@ -9,7 +9,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { NavigComponent } from './navig/navig.component';
 import { PaginaInicioComponent } from './pagina-inicio/pagina-inicio.component';
 import { LoginComponent } from './login/login.component';
+import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
 import { RegistroComponent } from './registro/registro.component';
+import { AceptarSolicitudComponent } from './aceptar-solicitud/aceptar-solicitud.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { RegistroComponent } from './registro/registro.component';
     NavigComponent,
     PaginaInicioComponent,
     LoginComponent,
-    RegistroComponent
+    RegistroComponent,
+    CrearPublicacionComponent,
+    AceptarSolicitudComponent
   ],
   imports: [
     BrowserModule,

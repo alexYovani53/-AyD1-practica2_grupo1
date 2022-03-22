@@ -1,8 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PaginaInicioComponent } from './pagina-inicio/pagina-inicio.component';
+import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from "./registro/registro.component";
+import { AceptarSolicitudComponent } from "./aceptar-solicitud/aceptar-solicitud.component";
 const routes: Routes = [
   {
     path: 'Login',
@@ -15,6 +17,14 @@ const routes: Routes = [
   {
     path : 'paginaInicio',
     component:PaginaInicioComponent 
+  },
+  {
+    path : 'crearPublicacion',
+    component:CrearPublicacionComponent 
+  },
+  {
+    path : 'aceptarSolicitud',
+    component:AceptarSolicitudComponent 
   },
   {
     path : '**', redirectTo: 'Login'
