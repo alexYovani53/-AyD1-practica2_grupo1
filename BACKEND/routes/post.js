@@ -7,8 +7,6 @@ router.post('/addPost/:id_user', (req, res) => {
     const {publication, image} = req.body;
     const id_user = req.params.id_user;
 
-    console.log(publication, image, id_user);
-
     connection.query(`INSERT INTO publicacion (publicacion, imagen, id_usuario, fecha)
     VALUES ('${publication}', '${image}', ${id_user}, DATE_SUB(NOW(), interval 6 hour));`, (err, rows) => {
         try {
@@ -25,4 +23,25 @@ router.post('/addPost/:id_user', (req, res) => {
     });
 });
 
+
+router.get('/verPost/:id_user', (req, res) => {
+
+    const id_user = req.params.id_user;
+    
+    console.log(id_user);
+
+    connection.query(`select * from publicacion where id_usuario = ${id_user}
+    union select * from publicacion where id_usuario in ( select id_usuario2 from amistad where id_usuario1 = ${id_user});`, (err, rows) => {
+        try {
+
+            if (err) {
+                res.send({status: 400, message: "Error in DataBase, can possibility id_user is incorrect"});
+            } else {
+                res.send({status: 200, message: "Post Add successfully",rows});
+            } 
+        } catch(e) {
+            console.log(e);
+        }
+    });
+});
 module.exports = router;

@@ -24,7 +24,6 @@ router.post('/registro/crear', (req, res) => {
         };
     }
    
-    console.log(usuObj);
     connection.query(sql, usuObj, error => {
         if (error)
         {
