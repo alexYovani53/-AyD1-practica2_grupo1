@@ -30,8 +30,10 @@ router.get('/verPost/:id_user', (req, res) => {
     
     console.log(id_user);
 
-    connection.query(`select * from publicacion where id_usuario = ${id_user}
-    union select * from publicacion where id_usuario in ( select id_usuario2 from amistad where id_usuario1 = ${id_user});`, (err, rows) => {
+    connection.query(`select p.publicacion, p.imagen, p.id_usuario, p.fecha, u.nombre, u.foto, u.usuario 
+    from publicacion as p, USUARIO as u where p.id_usuario =  ${id_user} and p.id_usuario = u.id_usuario
+    union select p.publicacion, p.imagen, p.id_usuario, p.fecha, u.nombre, u.foto, u.usuario 
+    from publicacion as p, USUARIO as u where p.id_usuario in ( select id_usuario2 from amistad where id_usuario1 = ${id_user})  and p.id_usuario = u.id_usuario;`, (err, rows) => {
         try {
 
             if (err) {
