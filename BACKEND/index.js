@@ -5,6 +5,7 @@ const bodyParser = require("body-parser")
 const routesLogin = require('./routes/login');
 const routesRegistro = require('./routes/registro');
 const routesPost = require('./routes/post');
+const routesSendSolicitude = require('./routes/sendSolicitude');
 
 const PORT = process.env.PORT || 1337;
 
@@ -26,6 +27,7 @@ app.use((req, res, next) => {
 app.use(routesLogin);  
 app.use(routesRegistro);  
 app.use(routesPost);
+app.use(routesSendSolicitude);
 
 var server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
