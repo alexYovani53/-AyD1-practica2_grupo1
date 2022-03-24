@@ -7,6 +7,7 @@ import { RegistroComponent } from "./registro/registro.component";
 import { AceptarSolicitudComponent } from "./aceptar-solicitud/aceptar-solicitud.component";
 import {EnviarSolicitudComponent} from "./enviar-solicitud/enviar-solicitud.component";
 import { ViewPostComponent } from "./view-post/view-post.component"
+import {EnviarSolicitudComponent} from "./enviar-solicitud/enviar-solicitud.component";
 const routes: Routes = [
   {
     path: 'Login',

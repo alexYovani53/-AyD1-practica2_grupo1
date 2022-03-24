@@ -26,7 +26,8 @@ import { ViewPostComponent } from './view-post/view-post.component';
     CrearPublicacionComponent,
     AceptarSolicitudComponent,
     EnviarSolicitudComponent,
-    ViewPostComponent
+    ViewPostComponent,
+    EnviarSolicitudComponent
   ],
   imports: [
     BrowserModule,
