@@ -7,6 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EnviarSolicitudComponent implements OnInit {
 
+  lista:any =
+    [
+      {name : "Koopa", url : "https://i1.sndcdn.com/avatars-000425951190-weqmxv-t240x240.jpg"},
+      {name : "Koopa", url : "https://i1.sndcdn.com/avatars-000425951190-weqmxv-t240x240.jpg"},
+      {name : "Koopa", url : "https://i1.sndcdn.com/avatars-000425951190-weqmxv-t240x240.jpg"},
+      {name : "Koopa", url : "https://i1.sndcdn.com/avatars-000425951190-weqmxv-t240x240.jpg"},
+      {name : "Koopa", url : "https://i1.sndcdn.com/avatars-000425951190-weqmxv-t240x240.jpg"},
+      {name : "Koopa", url : "https://i1.sndcdn.com/avatars-000425951190-weqmxv-t240x240.jpg"},
+      {name : "Koopa", url : "https://i1.sndcdn.com/avatars-000425951190-weqmxv-t240x240.jpg"},
+      {name : "Koopa", url : "https://i1.sndcdn.com/avatars-000425951190-weqmxv-t240x240.jpg"},
+    ];
+
   constructor() { }
 
   ngOnInit(): void {
