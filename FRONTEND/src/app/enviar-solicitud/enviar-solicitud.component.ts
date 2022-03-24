@@ -1,5 +1,6 @@
-import {Component, OnInit} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import {Router} from "@angular/router";
+import {UsersService} from "../services/users/users.service";
 import {FriendService} from "../services/friends/friend.service";
 
 @Component({
@@ -27,8 +28,8 @@ export class EnviarSolicitudComponent implements OnInit {
     this.friendService.notFriends(username).subscribe(res => {
       let users = res.resultado;
       for (let u of users) {
-        u.foto = `data:image/png;base64,${u.foto}`;
-        console.log(u)
+        u.foto = "https://i1.sndcdn.com/avatars-000425951190-weqmxv-t500x500.jpg";
+        // console.log(u)
         this.lista.push(u);
       }
     });
