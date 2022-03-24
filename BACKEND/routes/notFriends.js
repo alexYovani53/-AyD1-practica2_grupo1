@@ -14,9 +14,14 @@ router.get('/notFriends/:usuario', (req, res) => {
     const { usuario } = req.params; 
 
     const sql = `SELECT * FROM USUARIO
-                LEFT JOIN amistad a on USUARIO.id_usuario = a.id_usuario2
-                WHERE a.id_usuario2 is null
-                AND USUARIO.usuario != '${usuario}';`;
+                  LEFT JOIN (
+                      SELECT id_usuario2
+                      FROM USUARIO
+                      LEFT JOIN amistad a on USUARIO.id_usuario = a.id_usuario1
+                      WHERE id_usuario1 = 4
+                  ) U
+                  ON USUARIO.id_usuario = U.id_usuario2
+                  WHERE U.id_usuario2 is null AND USUARIO.usuario != '${usuario}';`;
     
 
     connection.query(sql, (error, results) => {
