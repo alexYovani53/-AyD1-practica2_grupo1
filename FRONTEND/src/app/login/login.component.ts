@@ -89,7 +89,7 @@ export class LoginComponent implements OnInit {
       localStorage.setItem('nombre', this.objstorage.nombre);
 
       //Redirigir
-      this.router.navigate(['/paginaInicio']);
+      this.router.navigate(['/viewPost']);
     }, err => {
       console.error(err);
       alert("Datos erróneos");

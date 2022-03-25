@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import axios from 'axios';
 
 @Component({
   selector: 'app-view-post',
@@ -7,42 +8,31 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewPostComponent implements OnInit {
 
-  listPost = [
-    {
-      "img": "https://somoskudasai.com/wp-content/uploads/2021/07/portada_monogatari-series-5.jpg",
-      "publication": "Esta es mi primera publicación",
-      "user": "Elian Estrada",
-      "date": "24 de Marzo a las 11:43",
-      "userImage": "data:image/png;base64," + localStorage.getItem("foto")?.toString()
-    },
-    {
-      "img": "https://rtvc-assets-radionica3.s3.amazonaws.com/s3fs-public/2022-02/animes.jpg",
-      "publication": "Kimetsu No Yaiba :3",
-      "user": "Elian Estrada",
-      "date": "24 de Marzo a las 11:48",
-      "userImage": "data:image/png;base64," + localStorage.getItem("foto")?.toString()
-    },
-    {
-      "img": "https://astelus.com/wp-content/viajes/Lago-Moraine-Parque-Nacional-Banff-Alberta-Canada.jpg",
-      "publication": "Me lo merezco",
-      "user": "Elian Estrada",
-      "date": "24 de Marzo a las 12:43",
-      "userImage": "data:image/png;base64," + localStorage.getItem("foto")?.toString()
-    },
-    {
-      "img": "https://somoskudasai.com/wp-content/uploads/2021/07/portada_monogatari-series-5.jpg",
-      "publication": "Esta es mi primera publicación",
-      "user": "Elian Estrada",
-      "date": "24 de Marzo a las 11:43",
-      "userImage": "data:image/png;base64," + localStorage.getItem("foto")?.toString()
-    }
-  ]
+  listPost:any;
+  exist: boolean;
 
-  isImg:boolean = true;
-
-  constructor() { }
+  constructor() { this.exist = false }
 
   ngOnInit(): void {
+    this.getData();
+  }
+
+  async getData() {
+      const response = await axios.get(`http://localhost:1337/verPost/${localStorage.getItem("idusuario")?.toString()}`)
+      
+      if (response.status != 200) {
+        alert("Error al cargar Data");
+        return
+      }
+      console.log(this.listPost);
+      
+      console.log(response.data.rows);
+      this.listPost = [...response.data.rows];
+
+      if (this.listPost.lenght !== 0){
+        this.exist = true;
+      }
+
   }
 
 }
