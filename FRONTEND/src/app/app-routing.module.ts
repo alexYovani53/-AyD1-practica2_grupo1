@@ -5,6 +5,7 @@ import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from "./registro/registro.component";
 import { AceptarSolicitudComponent } from "./aceptar-solicitud/aceptar-solicitud.component";
+import { ViewPostComponent } from "./view-post/view-post.component"
 const routes: Routes = [
   {
     path: 'Login',
@@ -25,6 +26,10 @@ const routes: Routes = [
   {
     path : 'aceptarSolicitud',
     component:AceptarSolicitudComponent 
+  },
+  {
+    path : 'viewPost',
+    component:ViewPostComponent
   },
   {
     path : '**', redirectTo: 'Login'
