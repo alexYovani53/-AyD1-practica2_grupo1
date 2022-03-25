@@ -1,0 +1,41 @@
+<app-navig></app-navig>
+<br>
+<div class="container">
+    <div class="row p-3 mb-2 bg-gradient-dark">
+        <div class="col-md-12">
+            <div *ngIf="exist">
+                <div class="card bg-dark text-white mt-2" *ngFor="let item of listPost">
+                    <div class="row py-4 ps-4">
+                        <div class="col col-xl-1 col-lg-1 col-md-2">
+                            <div class="thumbnail">
+                                <img src="data:image/png;base64,{{item.foto}}" alt="user" class="img-thumbnail"
+                                    style="width:100%">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <h6>{{item.nombre}}</h6>
+                            <h6 class="text-muted">{{item.fecha}}</h6>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h5 class="card-text">{{item.publicacion}}</h5>
+                    </div>
+                    <div class="ratio ratio-21x9" *ngIf="item.imagen !== ''">
+                        <img src="data:image/png;base64,{{item.imagen}}" alt="" class="card-img-top">
+                    </div>
+                    <br>
+                </div>
+            </div>
+            <div *ngIf="!exist">
+                <div class="vh-100 row m-0 text-center align-items-center justify-content-center">
+                    <div class="col-auto">
+                        <i class="fa-solid fa-face-meh fa-5x"></i>
+                    </div>
+                    <div class="col-auto">
+                        <h5>No hay publicaciones para mostrar!</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
