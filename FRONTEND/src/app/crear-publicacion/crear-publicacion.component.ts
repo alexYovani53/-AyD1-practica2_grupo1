@@ -57,12 +57,11 @@ export class CrearPublicacionComponent implements OnInit {
     axios.post("http://localhost:1337/addPost/" + idUser ,{
       publication:this.crearPublicacion.value.publication,
       image: this.image,
-
-
     }).then(result=>{
       console.log(result.data.status);
         if(result.data.status == 200){
           alert('Se guardo post exitosamente')
+          this.router.navigate(['/viewPost'])
         }
       }
     ).catch(err=>{
