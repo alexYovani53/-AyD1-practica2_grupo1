@@ -21,4 +21,18 @@ describe('/POST/addPost/:id_user ID',()=>{
     });
 });
    
+describe('/GET/verPost/:id Post', () => {
+    it('It should GET post', done => {
+        let id = 1;
+        chai.request(server)
+        .get(`/verPost/${id}`)
+        .end((err, res) => {
+            res.should.have.status(200);
+            res.body.should.be.a('object');
+            res.body.should.have.property('rows');
+            res.body.should.have.property('rows').not.eql([]);
+        done();
+        })
+    });
+});
    
