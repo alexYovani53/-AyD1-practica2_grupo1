@@ -9,14 +9,14 @@ chai.use(chaiHttp);
 
 
 describe('/POST/login',()=>{
-    it('should insert a post', (done) => {
+    it('should consult', (done) => {
     chai.request(server)
     .post(`/login`)
-    .send({user_name: "lesmg", password : "123"})
+    .send({user_name: "matixs", password : "mati"})
     .end( function(err,res){
         res.should.have.status(200);
         res.body.should.have.property('status');
-        res.body.should.have.property('msg').eql("Successfully");
+        res.body.should.have.property('message').eql("Successfully");
         done();
     });
     });
