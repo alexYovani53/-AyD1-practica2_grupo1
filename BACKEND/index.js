@@ -7,7 +7,6 @@ const routesRegistro = require('./routes/registro');
 const routesPost = require('./routes/post');
 const routesNotFriends = require('./routes/notFriends');
 const routesSendSolicitude = require('./routes/sendSolicitude');
-const routesNotFriends = require('./routes/notFriends');
 
 const PORT = process.env.PORT || 1337;
 
