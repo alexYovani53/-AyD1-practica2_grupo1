@@ -1,18 +1,20 @@
-
-<nav class="navbar navbar-dark bg-primary navbar-expand-md" >
+<nav class="navbar navbar-dark bg-primary navbar-expand-md">
 
   <ul class="navbar-nav mx-auto">
+    <li class="nav_item text-center">
+      <a class="btn btn-outline-light" routerLink="/viewPost">INICIO</a>
+    </li>
     <li class="nav-item active text-center">
-      <a class="btn btn-outline-light" routerLink="/paginaInicio">INICIO</a>
+      <a class="btn btn-outline-light" routerLink="/paginaInicio">PERFIL</a>
     </li>&nbsp;
     <li class="nav-item text-center">
-      <a class="btn btn-outline-light" routerLink="/subirFoto">SUBIR FOTO</a>
+      <a class="btn btn-outline-light" routerLink="/crearPublicacion">PUBLICAR</a>
     </li>&nbsp;
     <li class="nav-item text-center">
-      <a class="btn btn-outline-light" routerLink="/verFotos">VER FOTOS</a>
+      <a class="btn btn-outline-light" routerLink="/aceptarSolicitud">ACEPTAR SOLICITUD</a>
     </li>&nbsp;
     <li class="nav-item text-center">
-      <a class="btn btn-outline-light" routerLink="/editarAlbum">EDITAR ALBUM(S)</a>
+      <a class="btn btn-outline-light" routerLink="/enviarSolicitud">ENVIAR SOLICITUD</a>
     </li>&nbsp;
     <li class="nav-item text-center">
       <button (click)="killSesion()" type="button" class="btn btn-outline-warning">CERRAR SESION</button>

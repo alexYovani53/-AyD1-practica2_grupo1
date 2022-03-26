@@ -9,11 +9,11 @@ export class PaginaInicioComponent implements OnInit {
   
   permitido: boolean = false;
   verificado: boolean = false;
-  user: string = '';
-  name: string = '';
-  pass : string ='';
-  imageSrc: string = '';
-  imageAlt: string = '';
+  user?: string = '';
+  name?: string = '';
+  pass?: string ='';
+  imageSrc?: string = '';
+  imageAlt?: string = '';
 
   verCam = true;
 
@@ -26,8 +26,10 @@ export class PaginaInicioComponent implements OnInit {
 
   public construir(){
     this.verificado = false;
-    //alert(localStorage.getItem('username'))
-  
+    this.user = localStorage.getItem('username')?.toString();
+    this.name = localStorage.getItem('nombre')?.toString();
+    //console.log(localStorage.getItem('foto')?.toString())
+    this.imageSrc = "data:image/png;base64," + localStorage.getItem('foto')?.toString();
   }
 
   public guardar(){

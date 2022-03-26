@@ -1,0 +1,37 @@
+<app-navig></app-navig>
+<br>
+<div class="container">
+<div class="row p-3 mb-2 bg-gradient-dark text-white">
+    <table class="table table-striped">
+        <tr>
+            <td>
+                     
+            </td>
+            <td>
+
+        <form [formGroup]="crearPublicacion" (ngSubmit)="test()" >
+
+                <div class="form-group">
+                    <label for="publication">TEXTO DE PUBLICACIÓN</label>
+                    <input formControlName="publication" type="text" class="form-control" name="publication" id="publication"  placeholder="publication"/>
+                </div>
+                <span class="Errores">{{ErrorPublicacion}}</span>
+                <div class="form-group">
+                    <label for="img">IMAGEN</label>
+                    <input formControlName="image" type="file" class="form-control inputfile"  name="image" id="image" (change)="fileChange($event)" />
+                    <input formControlName="fototext" type="text" class="form-control" name="fototext" id="fototext" [readonly]="true"  placeholder="Image nombre" value="{{crearPublicacion.value.fototext}}"/>
+                </div>
+                <span class="Errores">{{ErrorImg}}</span>
+
+                <br>
+                <div class="form-group">
+                    <button type="button"  type="submit" class="btn btn-primary btn-sm" >PUBLICAR</button>&nbsp;
+                    <button type="button" class="btn btn-danger btn-sm" >CANCELAR</button>
+                </div>
+
+        </form>
+            </td>
+        </tr>
+    </table>
+</div>
+</div>
