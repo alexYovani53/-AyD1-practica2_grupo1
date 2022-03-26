@@ -33,4 +33,17 @@ export class FriendService {
       }),
       {headers: httpOptions.headers});
   }
+
+  
+  getVerSolicitud(idusuario: number): Observable<any>
+  {
+    return this.http.get(`${API_URL}/verSolicitudes/${idusuario}`);
+  }
+
+  updateAmistad(amistad: any): Observable<any>
+  {
+    return this.http.post(`${API_URL}/aceptarSolicitud/`,amistad);
+  }
+
+
 }
