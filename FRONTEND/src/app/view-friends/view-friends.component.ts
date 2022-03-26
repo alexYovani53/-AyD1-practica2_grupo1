@@ -20,15 +20,13 @@ export class ViewFriendsComponent implements OnInit {
   async getData() {
     let response;
     try{
-      response = await axios.get(`http://localhost:1337/verAmigos/${localStorage.getItem('idusuario')}`);
+      response = await axios.get(`http://localhost:1337/viewFriends/${localStorage.getItem('idusuario')}`);
     } catch (e){
       console.error(e);
     }
-    console.log(response);
     
     if (response !== undefined) {
-      alert("entra")
-      this.friends = [...response.data.rows];
+      this.friends = [...response.data.resultado];
     }
     
     if (this.friends.lenght !== 0){
