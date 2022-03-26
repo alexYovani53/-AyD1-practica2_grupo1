@@ -6,7 +6,7 @@ router.post('/aceptarSolicitud', (req, res) => {
 
     const { logUser, toUser } = req.body;
 
-    const sql = `UPDATE amistad SET aceptar = 1 WHERE id_usuario1 = ${logUser} AND id_usuario2 = ${toUser};`;
+    const sql = `UPDATE amistad SET aceptar = 1 WHERE id_usuario1 = '${logUser}' AND id_usuario2 = '${toUser}';`;
 
     connection.query(sql, (err) => {
 
@@ -24,4 +24,3 @@ router.post('/aceptarSolicitud', (req, res) => {
 });
 
 module.exports = router;
-
