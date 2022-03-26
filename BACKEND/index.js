@@ -7,6 +7,7 @@ const routesRegistro = require('./routes/registro');
 const routesPost = require('./routes/post');
 const routesSendSolicitude = require('./routes/sendSolicitude');
 const routesViewFriends = require('./routes/viewFriends');
+const routesAccepRequest = require('./routes/aceptarSolicitud');
 
 const PORT = process.env.PORT || 1337;
 
@@ -30,6 +31,7 @@ app.use(routesRegistro);
 app.use(routesPost);
 app.use(routesSendSolicitude);
 app.use(routesViewFriends);
+app.use(routesAccepRequest);
 
 var server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 

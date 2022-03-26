@@ -12,11 +12,11 @@ describe('/POST/aceptarSolicitud',()=>{
     it('should accept request', (done) => {
     chai.request(server)
     .post(`/aceptarSolicitud`)
-    .send({logUser: 4, toUser : 3})
+    .send({logUser: 4, toUser : 5})
     .end( function(err,res){
         res.should.have.status(200);
         res.body.should.have.property('status');
-        res.body.should.have.property('message').eql("Successfully");
+        res.body.should.have.property('message').eql("Solicitud aceptada");
         done();
     });
     });
