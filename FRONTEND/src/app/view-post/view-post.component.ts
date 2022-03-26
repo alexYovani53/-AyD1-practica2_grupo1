@@ -24,9 +24,6 @@ export class ViewPostComponent implements OnInit {
         alert("Error al cargar Data");
         return
       }
-      console.log(this.listPost);
-      
-      console.log(response.data.rows);
       this.listPost = [...response.data.rows];
 
       if (this.listPost.lenght !== 0){

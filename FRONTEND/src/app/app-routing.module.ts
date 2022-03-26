@@ -8,6 +8,7 @@ import { AceptarSolicitudComponent } from "./aceptar-solicitud/aceptar-solicitud
 import {EnviarSolicitudComponent} from "./enviar-solicitud/enviar-solicitud.component";
 import { ViewPostComponent } from "./view-post/view-post.component"
 import {EnviarSolicitudComponent} from "./enviar-solicitud/enviar-solicitud.component";
+import { ViewFriendsComponent } from './view-friends/view-friends.component';
 const routes: Routes = [
   {
     path: 'Login',
@@ -36,6 +37,10 @@ const routes: Routes = [
   {
     path : 'viewPost',
     component:ViewPostComponent
+  },
+  {
+    path : 'viewFriends',
+    component:ViewFriendsComponent
   },
   {
     path : '**', redirectTo: 'Login'

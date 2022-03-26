@@ -14,6 +14,7 @@ import { RegistroComponent } from './registro/registro.component';
 import { AceptarSolicitudComponent } from './aceptar-solicitud/aceptar-solicitud.component';
 import { EnviarSolicitudComponent } from './enviar-solicitud/enviar-solicitud.component';
 import { ViewPostComponent } from './view-post/view-post.component';
+import { ViewFriendsComponent } from './view-friends/view-friends.component';
 
 
 @NgModule({
@@ -27,7 +28,8 @@ import { ViewPostComponent } from './view-post/view-post.component';
     AceptarSolicitudComponent,
     EnviarSolicitudComponent,
     ViewPostComponent,
-    EnviarSolicitudComponent
+    EnviarSolicitudComponent,
+    ViewFriendsComponent
   ],
   imports: [
     BrowserModule,
