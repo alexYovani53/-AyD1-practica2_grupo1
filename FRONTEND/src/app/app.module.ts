@@ -11,6 +11,9 @@ import { PaginaInicioComponent } from './pagina-inicio/pagina-inicio.component';
 import { LoginComponent } from './login/login.component';
 import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
 import { RegistroComponent } from './registro/registro.component';
+import { AceptarSolicitudComponent } from './aceptar-solicitud/aceptar-solicitud.component';
+import { ViewPostComponent } from './view-post/view-post.component';
+import { EnviarSolicitudComponent } from './enviar-solicitud/enviar-solicitud.component';
 
 
 @NgModule({
@@ -20,7 +23,10 @@ import { RegistroComponent } from './registro/registro.component';
     PaginaInicioComponent,
     LoginComponent,
     RegistroComponent,
-    CrearPublicacionComponent
+    CrearPublicacionComponent,
+    AceptarSolicitudComponent,
+    ViewPostComponent,
+    EnviarSolicitudComponent
   ],
   imports: [
     BrowserModule,

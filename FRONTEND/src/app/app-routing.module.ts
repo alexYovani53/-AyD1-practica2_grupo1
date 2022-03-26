@@ -4,6 +4,9 @@ import { PaginaInicioComponent } from './pagina-inicio/pagina-inicio.component';
 import { CrearPublicacionComponent } from './crear-publicacion/crear-publicacion.component';
 import { LoginComponent } from './login/login.component';
 import { RegistroComponent } from "./registro/registro.component";
+import { AceptarSolicitudComponent } from "./aceptar-solicitud/aceptar-solicitud.component";
+import { ViewPostComponent } from "./view-post/view-post.component"
+import {EnviarSolicitudComponent} from "./enviar-solicitud/enviar-solicitud.component";
 const routes: Routes = [
   {
     path: 'Login',
@@ -15,11 +18,23 @@ const routes: Routes = [
   },
   {
     path : 'paginaInicio',
-    component:PaginaInicioComponent 
+    component:PaginaInicioComponent
   },
   {
     path : 'crearPublicacion',
-    component:CrearPublicacionComponent 
+    component:CrearPublicacionComponent
+  },
+  {
+    path : 'aceptarSolicitud',
+    component:AceptarSolicitudComponent
+  },
+  {
+    path : 'enviarSolicitud',
+    component:EnviarSolicitudComponent
+  },
+  {
+    path : 'viewPost',
+    component:ViewPostComponent
   },
   {
     path : '**', redirectTo: 'Login'

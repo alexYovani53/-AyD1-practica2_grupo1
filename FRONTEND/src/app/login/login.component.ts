@@ -12,7 +12,10 @@ export class LoginComponent implements OnInit {
   //Objeto para el localstorage
   objstorage: any = {
     username: '',
-    idusuario: 0
+    idusuario: 0,
+    foto: '',
+    contrasena: '',
+    nombre: ''
   }
   correo: any;
   contra: any;
@@ -74,13 +77,19 @@ export class LoginComponent implements OnInit {
       //La respuesta se almacena en el objstorage
       this.objstorage.username = res.data.usuario;
       this.objstorage.id_usuario = res.data.id_usuario;
+      this.objstorage.foto = res.data.foto;
+      this.objstorage.contrasena = res.data.contrasena;
+      this.objstorage.nombre = res.data.nombre;
 
       //Guardado en el LocalStorage
       localStorage.setItem('username', this.objstorage.username);
       localStorage.setItem('idusuario', this.objstorage.id_usuario);
+      localStorage.setItem('foto', this.objstorage.foto);
+      localStorage.setItem('contrasena', this.objstorage.contrasena);
+      localStorage.setItem('nombre', this.objstorage.nombre);
 
       //Redirigir
-      this.router.navigate(['/paginaInicio']);
+      this.router.navigate(['/viewPost']);
     }, err => {
       console.error(err);
       alert("Datos erróneos");
