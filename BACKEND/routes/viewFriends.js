@@ -10,7 +10,7 @@ router.get('/viewFriends/:usuario', (req, res) => {
                     (
                     select id_usuario2 from amistad 
                     where id_usuario1 = (select id_usuario from USUARIO
-                    where USUARIO.usuario = '${usuario}') and aceptar = 1
+                    where USUARIO.id_usuario = ${usuario}) and aceptar = 1
                     );`;
     
 
