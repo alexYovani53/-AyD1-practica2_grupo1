@@ -30,7 +30,6 @@ app.use(routesRegistro);
 app.use(routesPost);
 app.use(routesNotFriends);
 app.use(routesSendSolicitude);
-app.use(routesNotFriends);
 
 var server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
