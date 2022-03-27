@@ -1,0 +1,27 @@
+<app-navig></app-navig>
+<br>
+<div class="container">
+    <div class="row" *ngIf="exist">
+        <div class="col-12 text-center">
+            <h1>Amigos</h1>
+        </div>
+        <div class="col-3" *ngFor="let item of friends">
+            <div class="card shadow rounded px-3 py-3">
+                <img src="data:image/png;base64,{{item.foto}}" alt="user" class="img-fluid shadow-lg rounded-circle" style="width:100%">
+                <div class="card-text pt-3 text-center">
+                    <h4>{{item.usuario}}</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf="!exist">
+        <div class="vh-100 row m-0 text-center align-items-center justify-content-center">
+            <div class="col-auto">
+                <i class="fa-solid fa-face-meh fa-5x"></i>
+            </div>
+            <div class="col-auto">
+                <h5>No tienes amigos :'v</h5>
+            </div>
+        </div>
+    </div>
+</div>

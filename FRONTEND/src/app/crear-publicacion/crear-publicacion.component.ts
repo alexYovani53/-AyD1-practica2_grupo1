@@ -24,8 +24,8 @@ export class CrearPublicacionComponent implements OnInit {
     
     this.crearPublicacion = this.formulario.group({
       fototext:[''],
-      publication:['',Validators.required],
-      image:['',Validators.required]
+      publication:['',Validators.required]
+      //,image:['',Validators.required]
     })
 
    }
@@ -45,7 +45,7 @@ export class CrearPublicacionComponent implements OnInit {
       
       if(this.crearPublicacion.value.image =="") this.ErrorImg = "Seleccione una imagen";
       
-      if(this.crearPublicacion.value.fototext =="") this.ErrorFoto = "Seleccione una foto";
+      //if(this.crearPublicacion.value.fototext =="") this.ErrorFoto = "Seleccione una foto";
 
       return;
     }
