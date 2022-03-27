@@ -9,6 +9,7 @@ const routesNotFriends = require('./routes/notFriends');
 const routesSendSolicitude = require('./routes/sendSolicitude');
 const routesViewFriends = require('./routes/viewFriends');
 const routesAccepRequest = require('./routes/aceptarSolicitud');
+const routesPerfil = require('./routes/perfil');
 
 const PORT = process.env.PORT || 1337;
 
@@ -34,6 +35,7 @@ app.use(routesNotFriends);
 app.use(routesSendSolicitude);
 app.use(routesViewFriends);
 app.use(routesAccepRequest);
+app.use(routesPerfil);
 
 var server = app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
 
