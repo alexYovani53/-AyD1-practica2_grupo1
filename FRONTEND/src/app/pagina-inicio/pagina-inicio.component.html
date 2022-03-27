@@ -23,8 +23,15 @@
                     <label for="exampleFormControlInput2">NOMBRE COMPLETO</label>
                     <input [(ngModel)]="name" class="form-control" id="exampleFormControlInput2" >
                 </div>
+
                 <div class="form-group">
-                    <label for="exampleFormControlInput2">CONTRASEÑA ANTIGUA</label>
+                    <label for="img">IMAGEN</label>
+                    <input formControlName="image" type="file" class="form-control inputfile"  name="image" id="image" (change)="fileChange($event)" />
+                    <input formControlName="fototext" type="text" class="form-control" name="fototext" id="fototext" [readonly]="true"  placeholder="Image nombre" value="{{fototext}}"/>
+                </div>
+
+                <div  class="form-group">
+                    <label  for="exampleFormControlInput2">CONTRASEÑA ANTIGUA</label>
                     <input [(ngModel)]="passVerificar" type="password" class="form-control" id="exampleFormControlInput2" >
                     <button type="button" *ngIf="permitido" (click)="verificar()" class="btn btn-primary btn-sm" >VERIFICAR</button>&nbsp;
                 </div>
