@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FriendService } from '../services/friends/friend.service';
 
 @Component({
   selector: 'app-aceptar-solicitud',
@@ -7,26 +9,45 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AceptarSolicitudComponent implements OnInit {
 
-  lista:any = 
-  [
-    {name :"Mario2", url : "https://static1.funidelia.com/26258-f6_big2/mascara-de-mario-bros-para-adulto.jpg"},
-
-    {name : "Mario", url : "https://static1.funidelia.com/26258-f6_big2/mascara-de-mario-bros-para-adulto.jpg"},
-    {name : "Mario", url : "https://static1.funidelia.com/26258-f6_big2/mascara-de-mario-bros-para-adulto.jpg"},
-    {name : "Mario", url : "https://static1.funidelia.com/26258-f6_big2/mascara-de-mario-bros-para-adulto.jpg"},
-    {name : "Mario", url : "https://static1.funidelia.com/26258-f6_big2/mascara-de-mario-bros-para-adulto.jpg"},
-    {name : "Mario", url : "https://static1.funidelia.com/26258-f6_big2/mascara-de-mario-bros-para-adulto.jpg"},
-    {name : "Mario", url : "https://static1.funidelia.com/26258-f6_big2/mascara-de-mario-bros-para-adulto.jpg"},
-    {name : "Mario", url : "https://static1.funidelia.com/26258-f6_big2/mascara-de-mario-bros-para-adulto.jpg"},
-    {name : "Mario", url : "https://static1.funidelia.com/26258-f6_big2/mascara-de-mario-bros-para-adulto.jpg"},
-    
-
-  ];
+  lista:any = []
 
 
-  constructor() { }
+  constructor(private friendService: FriendService, private router: Router) { 
+
+  }
 
   ngOnInit(): void {
+    this.verSolicitudes()
+  }
+
+  verSolicitudes(){
+    this.lista = []
+    this.friendService.getVerSolicitud(Number(localStorage.getItem('idusuario'))).subscribe(
+      res => {
+        res.resultado.forEach((element: any) => {
+          element.foto = "data:image/png;base64," + element.foto
+        });
+        this.lista = res.resultado;
+       
+      },
+      err => {
+        console.error(err);
+        alert("Error, no pudo ver solicitudes");
+      }
+    )
+  }
+
+  aceptar(idAceptado: number){
+    this.friendService.updateAmistad({logUser: Number(localStorage.getItem('idusuario')), toUser: idAceptado}).subscribe(
+      res => {
+        this.verSolicitudes();
+        alert(res.message)
+      },
+      err => {
+        console.error(err);
+        alert("Error, no pudo realizar la acción aceptar");
+      }
+    )
   }
 
 }
