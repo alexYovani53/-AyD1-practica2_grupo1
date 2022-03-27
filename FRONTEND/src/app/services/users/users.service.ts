@@ -25,4 +25,10 @@ export class UsersService {
       JSON.stringify(user),
       {headers: httpOptions.headers});
   }
+
+  updatePerfil(usuario: any, idusuario: number): Observable<any>
+  {
+    return this.http.put(`${API_URL}/updatePerfil/${idusuario}`,usuario);
+  }
+
 }

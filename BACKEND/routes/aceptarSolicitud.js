@@ -5,8 +5,8 @@ const router = express.Router();
 router.post('/aceptarSolicitud', (req, res) => {
 
     const { logUser, toUser } = req.body;
-
-    const sql = `UPDATE amistad SET aceptar = 1 WHERE id_usuario1 = '${logUser}' AND id_usuario2 = '${toUser}';`;
+    console.log(req.body)
+    const sql = `UPDATE amistad SET aceptar = 1 WHERE id_usuario1 = ${toUser} AND id_usuario2 = ${logUser};`;
 
     connection.query(sql, (err) => {
 
