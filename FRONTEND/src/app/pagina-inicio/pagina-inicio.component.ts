@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import {Subject, Observable} from 'rxjs';
 @Component({
   selector: 'app-pagina-inicio',
   templateUrl: './pagina-inicio.component.html',
@@ -8,14 +7,14 @@ import {Subject, Observable} from 'rxjs';
 export class PaginaInicioComponent implements OnInit {
   
   permitido: boolean = false;
+  verNuevaContra: boolean = false;
   verificado: boolean = false;
   user?: string = '';
   name?: string = '';
-  pass?: string ='';
+  passNueva?: string ='';
+  passVerificar?: string ='';
   imageSrc?: string = '';
   imageAlt?: string = '';
-
-  verCam = true;
 
   constructor() {
    }
@@ -28,12 +27,13 @@ export class PaginaInicioComponent implements OnInit {
     this.verificado = false;
     this.user = localStorage.getItem('username')?.toString();
     this.name = localStorage.getItem('nombre')?.toString();
+    this.passNueva = localStorage.getItem('contrasena')?.toString();
     //console.log(localStorage.getItem('foto')?.toString())
     this.imageSrc = "data:image/png;base64," + localStorage.getItem('foto')?.toString();
   }
 
   public guardar(){
-    if(this.user != '' && this.name != '' && this.pass != ''){
+    if(this.user != '' && this.name != '' && this.passNueva != ''){
       this.permitido = false;
      
 
@@ -44,26 +44,23 @@ export class PaginaInicioComponent implements OnInit {
   }
 
   public verificar(){
-    if(localStorage.getItem('pass') == this.pass){
+    if(localStorage.getItem('contrasena') == this.passVerificar){
       alert('Verificado con exito!.')
       this.verificado = true;
+      this.verNuevaContra = true;
     }else{
       alert('Error de password.')
       this.verificado = false;
+      this.verNuevaContra = false;
     }
   }
 
   public cancelar(){
     this.permitido = false;
-    this.pass = '';
+    this.verNuevaContra = false;
+    this.passVerificar = '';
     this.construir();
   }
-
-  captura: MediaTrackConstraints = {
-    width: {ideal: 130},
-    height: {ideal: 130}
-  };
-
 
 }
 

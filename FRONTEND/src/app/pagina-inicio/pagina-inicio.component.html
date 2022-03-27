@@ -23,19 +23,18 @@
                     <label for="exampleFormControlInput2">NOMBRE COMPLETO</label>
                     <input [(ngModel)]="name" class="form-control" id="exampleFormControlInput2" >
                 </div>
-
-                
-
-                <div  *ngIf="permitido" class="form-group">
-                    <label for="exampleFormControlInput4">CONTRASEÑA</label>
-                    <input type="password" [(ngModel)]="pass" class="form-control" id="exampleFormControlInput4" >
+                <div class="form-group">
+                    <label for="exampleFormControlInput2">CONTRASEÑA ANTIGUA</label>
+                    <input [(ngModel)]="passVerificar" type="password" class="form-control" id="exampleFormControlInput2" >
                     <button type="button" *ngIf="permitido" (click)="verificar()" class="btn btn-primary btn-sm" >VERIFICAR</button>&nbsp;
                 </div>
-                <br>
-                <div *ngIf="permitido" class="row">
-                 
-                   
+                
+
+                <div  *ngIf="verNuevaContra" class="form-group">
+                    <label for="exampleFormControlInput4">CONTRASEÑA NUEVA</label>
+                    <input type="password" [(ngModel)]="passNueva" class="form-control" id="exampleFormControlInput4" >
                 </div>
+                <br>
                 <br>
                 <div class="form-group">
                     <button type="button" *ngIf="!permitido" (click)="permitido = true" class="btn btn-primary btn-sm" >EDITAR</button>&nbsp;
