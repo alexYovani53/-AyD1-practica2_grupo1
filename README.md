@@ -1,92 +1,190 @@
-# practica2_grupo1
+---
+tags: Ayd1, USAC, 1S2022, Practica2
+---
+
+# Practica 2
+> ### Integrantes
+> |No.|Carné| Nombre |
+> |---|---|---|
+> |1|201602912| Alex Yovani Jerónimo Tomás|
+> |2|201800722| José Daniel Velásquez Orozco |
+> |3|201314808| Leslie Fabiola Morales González|
+> |4|201503906| Gerson Gabriel Reyes Melgar|
+> |5|201806838| Elian Saúl Estrada Urbina|
 
 
+## Planificación
 
-## Getting started
+<details><summary>Planificación(+)</summary>
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+<p>
+    
+Se realizaron reuniones virtuales por medio de google meet, en las cuales se utilizó el proceso SCRUM, siguiendo los pasos planning, implementation, review y retrospect. Partiendo del sprint backlog y llegando a la definición de lo que fue completado. 
+    
+Las reuniones se encuentran en el siguiente enlace: [Reuniones](https://drive.google.com/drive/folders/1liC52_LGLXCAkWQ5dOln00NB_zzdqN5q)
+    
+![](https://i.imgur.com/1GIp6ER.png)
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+Los requisitos sobre los cuales trabajamos se desglosan de la siguiente manera:    
+    
+Funcionales:
+    
+ACCESO
+* Para registrarse los datos a ingresar son Usuario, Nombre Completo, Contraseña e imagien de foto de perfil.
+* Para registrarse en la página, el usuario debe confirmar su contraseña al ingresarla dos veces y el sistema verificará que sea correcta.
+* Para que un usuario pueda acceder, debe ingresar su nombre de usuario y contraseña. 
+    
+PUBLICACIONES
+* El usuario podrá crear publicaciones que serán visibles para otros usuarios que hayan aceptado amistad y para el mismo. 
+* Las publicaciones se mostrarán en una pantalla de inicio y serán ordenadas de la mas reciente a la mas antigua.
+    
+AMISTADES
+* El usuario tendrá la posibilidad de agregar a otros usuarios como amigos en una sección donde tendrá acceso a las personas que no han aceptado o solicitado su amistad. 
+* El usuario podrá aceptar o rechazar las solicitudes de amistad que reciba en su perfil. 
+    
+PERFIL
+* El usuario debe podr observar sus datos, conformados por: Nombre completo, Nombre de usuario y Foto de perfil.
+* El usuario podrá modificar los datos anteriores solamente cuando ingrese la contraseña correcta y anteriormente registrada. 
+    
+No funcionales:
+    
+* Los permisos de acceso solamente podrán ser manejados por el administrador.
+* Unicamente el usuario que es dueño de un perfil podrá aceptar o denegar solicitudes de amistad.
+* El usuario podra crear publicaciones unicamente bajo su perfil y no bajo el de algún otro usuario. 
+* Unicamente el propietario de la cuenta podrá observar los datos de su perfil y no tendrá acceso a las contraseñas del resto de los usuarios. 
 
-## Add your files
+</p>
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+</details>
 
-```
-cd existing_repo
-git remote add origin https://gitlab.com/usacreyes/practica2_grupo1.git
-git branch -M main
-git push -uf origin main
-```
+## Codificación
 
-## Integrate with your tools
+<details><summary>Codificación(+)</summary>
+<p>
+    
+Para la codificación se trabajo con Node.js y el framework para aplicaciones web, Angular.
+    
+![](https://i.imgur.com/gFBHQS2.png)
+    
+Por otra parte, para el versionamiento se utilizó un repositorio en gitlab, en el cual se trabajó un arbol de versionamiento con diferentes ramas, asignadas de acuerdo a los modulos y features a lanzar. Dicho repositorio se encuentra en la siguiente dirección: 
+    
+[Repositorio Grupo 1](https://gitlab.com/usacreyes/practica2_grupo1.git)
+    
+![](https://i.imgur.com/oEtJ1cc.png)
 
-- [ ] [Set up project integrations](https://gitlab.com/usacreyes/practica2_grupo1/-/settings/integrations)
+    
+Las ramas utilizadas se desglozan de la siguiente manera: 
 
-## Collaborate with your team
+![](https://i.imgur.com/Z2newL5.png)
 
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
+    
+</p>
+    
+ </details>
 
-## Test and Deploy
+## Compilación
 
-Use the built-in continuous integration in GitLab.
+<details><summary>Compilación(+)</summary>
+<p>
+    
+Para el entorno de la aplicación durante el desarrollo trabajamos de modo local. El frontend fue trabajado en el puerto 4200 y el backend en el puerto 1337. El manejo de la base de datos fue realizado por medio de MySQL y AWS. 
+    
+![](https://i.imgur.com/x9nyG07.png)
 
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
+    
+</p>
+</details>
+ 
+## Prueba
 
-***
+<details><summary>Prueba(+)</summary>
+Para las pruebas se utilizó Chai y C8 de code coverage. De esta manera nos fue posible realizar pruebas unitarias sobre los procesos establecidos en backend. 
+    
+![](https://i.imgur.com/bKWSNi8.png)
+</details>
 
-# Editing this README
 
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!).  Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
+## Puesta en marcha
 
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
+<details><summary>Puesta en marcha(+)</summary>
+<p>
+        
+El seguimiento y la gestión de modulos se realizó por medio de un tablero en la herramienta Trello del cual se adjunta una visualización a continuación: 
+    
+![](https://i.imgur.com/OyZ0FYt.jpg)
+    
+</p>  
+</details>
+ 
+ 
+## Funcionamiento
 
-## Name
-Choose a self-explaining name for your project.
+<details><summary>Funcionamiento(+)</summary>
+<p>
+    
+Pruebas Unitarias
+    
+### Get User
 
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
+Prueba realizada para la función que devuelve un usuario por medio del ingreso de sus credenciales.
+    
+![](https://i.imgur.com/0bZBPm3.png)
 
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
+### Get Post
 
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
+ Esta prueba fue realizada sobre la función que obtiene las publicaciones previamente realizadas que son visibles para el usuario en cuestión. 
+    
+![](https://i.imgur.com/X5uk85C.png)
 
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
+### Agree Request
+    
+Prueba realizada sobre el método que permite aceptar una amistad ya antes solicitada. 
+    
+![](https://i.imgur.com/1jmB6eO.png)
 
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
+### Show Friends
 
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
+Esta prueba fue realizada sobre el método que devuelve los nombres de todos las personas con quienes ya se ha aceptado una amistad. 
 
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
+![](https://i.imgur.com/p7e2TFX.png)
 
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
+    
+### addPost
 
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
+Prueba realizada para la función que crea una publicación, esta es almacedada en la base de datos junto con los valores que la referencian hacia el usuario que la realizó. 
+    
+![Image text](https://i.imgur.com/yvsU0sy.png) 
+    
+### Login
 
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
+Prueba realizada sobre el método que permite verificar que el usuario y la contraseña son validos y coinciden para poder ingresar al perfil en cuestión. 
 
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
+![](https://i.imgur.com/7iZkkjh.png)
 
-## License
-For open source projects, say how it is licensed.
+### Actualizar Perfil
 
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Actualizar perfil, permite cambiar las propiedades de un usuario registrado. 
+    
+![](https://i.imgur.com/65AMzmF.png)
+
+    
+### Enviar Solicitud
+
+Esta funcionalidad, envia una solicitud de amistad de la persona que esta, actualmente logueada en el sistema, hacia otra persona registrada.
+
+![](https://i.imgur.com/9EPfAWW.png)
+    
+</p>
+</details>
+ 
+  
+## Supervisión
+
+<details><summary>Supervisión(+)</summary>
+<p>
+    
+Una vez que cada integrante completó sus tareas asignadas, y se realizaron las pruebas unitarias, se trabajaron los bugfix para realizar cualquier arreglo necesario que permitiera el funcionamiento correcto de la aplicación.
+    
+![](https://i.imgur.com/0YoopBD.png)   
+</p>
+</details>
