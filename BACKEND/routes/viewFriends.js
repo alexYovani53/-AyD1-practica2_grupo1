@@ -2,18 +2,15 @@ const express = require('express');
 const connection = require('../bd/conexion');
 const router = express.Router();
 
-router.get('/viewFriends/:idLogueado', (req, res) => {
-    const { idLogueado } = req.params; 
+router.get('/viewFriends/:usuario', (req, res) => {
+    const { usuario } = req.params; 
 
     const sql = `select * from USUARIO 
                     where id_usuario in
                     (
                     select id_usuario2 from amistad 
-                    where id_usuario1 = ${idLogueado} and aceptar = 1
-                    ) or id_usuario in
-                    (
-                    select id_usuario1 from amistad 
-                    where id_usuario2 = ${idLogueado} and aceptar = 1
+                    where id_usuario1 = (select id_usuario from USUARIO
+                    where USUARIO.id_usuario = ${usuario}) and aceptar = 1
                     );`;
     
 
